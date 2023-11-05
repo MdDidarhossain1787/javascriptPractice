@@ -196,6 +196,7 @@ abc()
 // newAbc()
 var newAbc = function(){
     console.log("I am new Function ABC")
+    console.log("git practice")
 }
 
 newAbc()
