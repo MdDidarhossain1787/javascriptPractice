@@ -200,7 +200,7 @@
 
 // Iterator 
 
-const arr = [1 , 2, 3]
+// const arr = [1 , 2, 3]
 
 // for(let i = 0; i < arr.length; i++){
 //     console.log(i)
@@ -225,22 +225,41 @@ const arr = [1 , 2, 3]
 // console.log(iterate.next())
 // console.dir(iterate.next)
 
-let iterate = arr[Symbol.iterator]()
+// let iterate = arr[Symbol.iterator]()
 
-console.log(iterate.next())
-console.log(iterate.next())
-console.log(iterate.next())
-console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
 
 // console.log(arr[Symbol.iterator])
 
 
-let str = 'Text'
+// let str = 'Text'
 
-let iterateText = str[Symbol.iterator]()
+// let iterateText = str[Symbol.iterator]()
 
-console.log(iterateText.next())
-console.log(iterateText.next())
-console.log(iterateText.next())
-console.log(iterateText.next())
-console.log(iterateText.next())
+// console.log(iterateText.next())
+// console.log(iterateText.next())
+// console.log(iterateText.next())
+// console.log(iterateText.next())
+// console.log(iterateText.next())
+
+// For of Loop (Object must be Iterable )
+const arr = [1 , 2, 3]
+for (let v of arr){
+    console.log(v)
+}
+
+for(let v of 'HM Nayem'){
+    console.log(v)
+}
+
+let obj = {
+    a: 10, 
+    b: 20
+}
+
+for(let v of obj){
+    console.log(v)
+}
