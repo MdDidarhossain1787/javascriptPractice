@@ -206,21 +206,41 @@ const arr = [1 , 2, 3]
 //     console.log(i)
 // }
 
-function createIterator(collection){
-    let i = 0
-    return {
-        next() {
-            return{
-                done: i >= collection.length,
-                value: collection[i++]
-            }
-        }
-    }
-}
+// function createIterator(collection){
+//     let i = 0
+//     return {
+//         next() {
+//             return{
+//                 done: i >= collection.length,
+//                 value: collection[i++]
+//             }
+//         }
+//     }
+// }
 
-let iterate = createIterator(arr)
-console.log(iterate.next())
-console.log(iterate.next())
+// let iterate = createIterator(arr)
 // console.log(iterate.next())
 // console.log(iterate.next())
-console.dir(iterate.next)
+// console.log(iterate.next())
+// console.log(iterate.next())
+// console.dir(iterate.next)
+
+let iterate = arr[Symbol.iterator]()
+
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+console.log(iterate.next())
+
+// console.log(arr[Symbol.iterator])
+
+
+let str = 'Text'
+
+let iterateText = str[Symbol.iterator]()
+
+console.log(iterateText.next())
+console.log(iterateText.next())
+console.log(iterateText.next())
+console.log(iterateText.next())
+console.log(iterateText.next())
