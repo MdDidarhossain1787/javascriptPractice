@@ -246,7 +246,7 @@
 // console.log(iterateText.next())
 
 // For of Loop (Object must be Iterable )
-const arr = [10 , 22, 35]
+// const arr = [10 , 22, 35]
 // for (let v of arr){
 //     console.log(v)
 // }
@@ -266,9 +266,9 @@ const arr = [10 , 22, 35]
 
 // Generator in JS
 
-let obj = {
-    start: 1, 
-    end: 5,
+// let obj = {
+//     start: 1, 
+//     end: 5,
     // [Symbol.iterator]: function(){
     //     let currentValue = this.start
     //     const self = this
@@ -281,13 +281,13 @@ let obj = {
     //         }
     //     }
     // }
-    [Symbol.iterator]: function* (){
-        let currentValue = this.start
-        while (currentValue <= this.end) {
-            yield currentValue++
-        }
-    }
-}
+//     [Symbol.iterator]: function* (){
+//         let currentValue = this.start
+//         while (currentValue <= this.end) {
+//             yield currentValue++
+//         }
+//     }
+// }
 
 // let iterate = obj[Symbol.iterator]()
 // console.log(iterate.next())
@@ -304,14 +304,26 @@ let obj = {
 //     yield 3
 // }
 
-function* generate(collection){
-    for(let i = 0; i < collection.length; i++){
-        yield collection[i]
-    }
-}
+// function* generate(collection){
+//     for(let i = 0; i < collection.length; i++){
+//         yield collection[i]
+//     }
+// }
 
-let it = generate(arr)
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
-console.log(it.next())
+// let it = generate(arr)
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+// console.log(it.next())
+
+//  Set In JS (ES6) 
+
+let set = new Set([1, 2, 3])
+// console.log(set)
+
+set.add(4)
+set.add(5)
+set.add(1)
+set.add(2)
+console.log(set)
+console.log(set.size)
