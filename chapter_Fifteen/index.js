@@ -310,20 +310,63 @@
 //     }
 // }
 
-// let it = generate(arr)
+// let it = generate([])
 // console.log(it.next())
 // console.log(it.next())
 // console.log(it.next())
 // console.log(it.next())
+
+// function isIterable(obj){
+//     return typeof obj[Symbol.iterator] == 'function'
+// }
 
 //  Set In JS (ES6) 
 
-let set = new Set([1, 2, 3])
+// let set = new Set([1, 2, 3])
 // console.log(set)
 
-set.add(4)
-set.add(5)
-set.add(1)
-set.add(2)
-console.log(set)
-console.log(set.size)
+// set.add(4)
+// set.add(5)
+// set.add(1)
+// set.add(2)
+// console.log(set)
+// console.log(set.size)
+// console.log(set.has(5))
+// console.log(set.keys())
+// console.log(set.values())
+
+// let KeyIterate = set.values()
+// console.log(KeyIterate.next())
+
+// console.log(isIterable(set))
+
+// for (let v of set){
+//     console.log(v)
+// }
+
+// console.log(set.entries())
+
+let map = new Map([
+    ['a', 10],
+    ['b', 20],
+    ['c', 30]
+])
+
+map.set('d', 40)
+// map.delete('c')
+map.set({name: 'HM Nayem'}, 45)
+
+// console.log(map.size)
+// console.log(map)
+// console.log(map.get('a'))
+// console.log(map.values())
+// console.log(map.keys())
+// console.log(map.entries())
+
+// for(let [k , v] of map){
+//     console.log(v, k)
+// }
+
+map.forEach((v, k) => {
+    console.log(k , v)
+})
