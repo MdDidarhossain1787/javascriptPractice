@@ -432,25 +432,113 @@
 // console.log(rect1)
 
 
-class Person{
-    constructor(name, email){
-        this.name = name
-        this.email = email
+// Class and Class Proparties and Static Method
+
+
+
+// class Person{
+//     constructor(name, email){
+//         this.name = name
+//         this.email = email
+//     }
+
+//     print(){
+//         console.log(this.name, this.email)
+//     }
+
+//     test (){
+//         console.log(this)
+//     }
+
+//     static create(){
+//         let person = JSON.parse(str)
+//         return new Person(person.name, person.email)
+//     }
+// }
+
+// let str = '{"name":"HM Nayem","email":"hasan.m.nayem"}'
+
+// let p1 = Person.create(str)
+// console.log(p1)
+// console.log(p1 instanceof Person)
+// p1.print()
+
+// Private Data and Private Proprties 
+
+// 'use strict'
+
+// function Shape(){
+//     this.draw = function(){
+//         console.log(this)
+//     }
+// }
+
+// let s1 = new Shape()
+// let anotherDraw = s1.draw
+// anotherDraw()
+
+// let test = p1.test
+
+// test()
+
+// Private Data 
+
+// const _radius = Symbol()
+// const _name = Symbol()
+// const _draw = Symbol()
+
+// class Circle{
+//     constructor(radius,name){
+//         this[_radius] = radius
+//         this[_name] = name
+//     }
+
+//     [_draw](){
+//         console.log('Drawing....')
+//     }
+// }
+
+// let c1 = new Circle(2, 'CRED')
+// console.log(c1)
+
+// console.log(Object.getOwnPropertyNames(c1))
+// console.log(Object.getOwnPropertySymbols(c1)[0])
+// let key = Object.getOwnPropertySymbols(c1)[0]
+// console.log(c1[key])
+
+//  Getter And Setter 
+
+const _radius = new WeakMap()
+const _name = new WeakMap()
+const _resize = new WeakMap()
+
+class Circle{
+    constructor(radius,name){
+        this.size = 100
+        _radius.set(this, radius)
+        _name.set(this, name)
+        _resize.set(this, ()=>{
+            console.log(this.size)
+        })
     }
 
-    print(){
-        console.log(this.name, this.email)
+    get radius(){
+        return _radius.get(this)
     }
 
-    static create(){
-        let person = JSON.parse(str)
-        return new Person(person.name, person.email)
+    set radius(v){
+        _radius.set(this, v)
+    }
+
+    draw(){
+        console.log('Drawing....')
+        console.log(_radius.get(this), _name.get(this))
+        _resize.get(this)()
     }
 }
 
-let str = '{"name":"HM Nayem","email":"hasan.m.nayem"}'
+let c1 = new Circle(2, 'CRED')
+c1.draw()
+c1.radius = 150
+console.log(c1.radius)
 
-let p1 = Person.create(str)
-console.log(p1)
-console.log(p1 instanceof Person)
-p1.print()
