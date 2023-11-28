@@ -508,37 +508,64 @@
 
 //  Getter And Setter 
 
-const _radius = new WeakMap()
-const _name = new WeakMap()
-const _resize = new WeakMap()
+// const _radius = new WeakMap()
+// const _name = new WeakMap()
+// const _resize = new WeakMap()
 
-class Circle{
-    constructor(radius,name){
-        this.size = 100
-        _radius.set(this, radius)
-        _name.set(this, name)
-        _resize.set(this, ()=>{
-            console.log(this.size)
-        })
-    }
+// class Circle{
+//     constructor(radius,name){
+//         this.size = 100
+//         _radius.set(this, radius)
+//         _name.set(this, name)
+//         _resize.set(this, ()=>{
+//             console.log(this.size)
+//         })
+//     }
 
-    get radius(){
-        return _radius.get(this)
-    }
+//     get radius(){
+//         return _radius.get(this)
+//     }
 
-    set radius(v){
-        _radius.set(this, v)
+//     set radius(v){
+//         _radius.set(this, v)
+//     }
+
+//     draw(){
+//         console.log('Drawing....')
+//         console.log(_radius.get(this), _name.get(this))
+//         _resize.get(this)()
+//     }
+// }
+
+// let c1 = new Circle(2, 'CRED')
+// c1.draw()
+// c1.radius = 150
+// console.log(c1.radius)
+
+// Inheritace 
+
+class Shape{
+    constructor(color){
+        this.color = color
     }
 
     draw(){
         console.log('Drawing....')
-        console.log(_radius.get(this), _name.get(this))
-        _resize.get(this)()
     }
 }
 
-let c1 = new Circle(2, 'CRED')
-c1.draw()
-c1.radius = 150
-console.log(c1.radius)
+class Rectangle extends Shape{
+     constructor(color,width, height){
+        super(color)
+        this.width = width
+        this.height = height
+     }
 
+     calculate(){
+        return this.width * this.height
+     }
+}
+
+let r1 = new Rectangle('Green', 4, 5)
+console.log(r1)
+r1.draw()
