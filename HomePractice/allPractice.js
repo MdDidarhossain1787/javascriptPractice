@@ -185,19 +185,96 @@
 
 // executional phase
 
-abc()
+// abc()
 
-function abc(){
-    console.log('I am Function abc')
-}
+// function abc(){
+//     console.log('I am Function abc')
+// }
 
-abc()
+// abc()
 
 // newAbc()
-var newAbc = function(){
-    console.log("I am new Function ABC")
-    console.log("git practice")
-    console.log("git practice with gui")
+// var newAbc = function(){
+//     console.log("I am new Function ABC")
+//     console.log("git practice")
+//     console.log("git practice with gui")
+// }
+
+// newAbc()
+
+// var s = `   akfafjjk
+// sjfhfjfj
+//      sfskafhsjdf
+// asfjasfj alfhawuiytaiwh
+// akfhulj     
+//             siefoiaefhaeg
+//             as`
+// console.log(s.trim())
+
+// var age = 20
+
+// var name = 'Didar Hossain'
+// console.log('My name is '+ name + 'and I am ' + age  + '  Years old')
+// console.log(`My name is ${name} and I am ${age} years old. I am ${age < 18 ? 'not ' : ' '}adult.`)
+// console.log(name.padStart(15))
+// console.log(name.padEnd(15,'a'))
+// console.log('S'. repeat(10))
+
+
+// var vs let vs const 
+
+
+// const a = 10
+//  a = 100
+//  console.log(a)
+
+// let a = 10 
+
+// a = 100
+// console.log(a)
+
+// if(true){
+//     let a = 10
+// }
+
+// console.log(a)
+
+// for(let i = 0; i < 5; i++){
+
+// }
+// console.log(i)
+
+
+
+
+// ES6 Inharetace
+
+class Shape{
+    constructor(color){
+        this.color = color
+    }
+
+    draw(){
+        console.log('Drawing....')
+    }
 }
 
-newAbc()
+class Rectangle extends Shape{
+    constructor(color, width, height){
+        super(color)
+        this.width = width
+        this.height = height
+    }
+
+    draw (){
+        console.log('Drawing a Rectangle....')
+    }
+
+    calculate(){
+        return this.width * this.height
+    }
+}
+
+let r1 = new Rectangle('Green', 4, 5)
+console.log(r1)
+r1.draw()
