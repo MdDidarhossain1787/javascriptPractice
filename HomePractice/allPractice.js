@@ -267,7 +267,7 @@ class Rectangle extends Shape{
     }
 
     draw (){
-        console.log('Drawing a Rectangle....')
+        console.log('Drawing a Rectangle....')  // Method Overriding
     }
 
     calculate(){
